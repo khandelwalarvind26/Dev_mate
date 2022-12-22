@@ -32,7 +32,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb+srv://admin:admin1234@cluster1.igkpg.mongodb.net/GitMatedb");
+mongoose.connect(process.env.ATLAS_URI);
 const userSchema=new mongoose.Schema({
   githubId:String});
   userSchema.plugin(findOrCreate);
